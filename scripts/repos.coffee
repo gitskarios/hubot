@@ -4,6 +4,7 @@ module.exports = (robot) ->
     	.get() (err, res, body) ->
     		data = JSON.parse body
     		response.send "Num repos downloaded: " +  data.length
+    		response.send "NUMBER: " +  data.length
     		response.send #{repo.full_name} for repo in data 
   robot.respond /repos$/i, (response) ->
   	response.send "Repos syntax: `repos {:username}`"
